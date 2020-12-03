@@ -163,7 +163,7 @@ def main(args):
     )
     statement_period_header, statement_period = list(statement_df.iterrows())[0][1]
     assert statement_period_header in STATEMENT_HEADERS
-    opening_year = int(statement_period.rsplit(" ", 1)[1])
+    opening_year = int(statement_period.split(" ")[2])
     assert 2000 <= opening_year <= 2100
 
     # Parse the opening/closing balance information from the left of the first page.
